@@ -1,0 +1,56 @@
+{
+    "name": "matlab assignment",
+    "is_dir": true,
+    "total_size": 1214591,
+    "piece_size": 262144,
+    "piece_hashes": [
+        "fbdd4484d2fd61a035b29e97a9ac8d264bbab38a",
+        "2860252801927a3c14c37915cb16e9406ee40d8f",
+        "0d062195c6ba2e86e4bb9a0ca32400987782cda3",
+        "b53c6fd21960150ae2aabfbce2e66b0718d83cc2",
+        "5dfb3141a6840fa34f2bf72971d8cb9cd3586dc7"
+    ],
+    "files": [
+        {
+            "path": "1st_page[1].pdf",
+            "length": 355657
+        },
+        {
+            "path": "certificate[1].pdf",
+            "length": 355668
+        },
+        {
+            "path": "lab1.pdf",
+            "length": 26119
+        },
+        {
+            "path": "LAB2.pdf",
+            "length": 21794
+        },
+        {
+            "path": "lab31 (1).pdf",
+            "length": 13981
+        },
+        {
+            "path": "LAB32.pdf",
+            "length": 13071
+        },
+        {
+            "path": "lab4.pdf",
+            "length": 25396
+        },
+        {
+            "path": "LAB51.pdf",
+            "length": 14733
+        },
+        {
+            "path": "LAB52.pdf",
+            "length": 38587
+        },
+        {
+            "path": "RACHIT.pdf",
+            "length": 349585
+        }
+    ],
+    "info_hash": "0b131145abd20e714f195a6137d49e1b313372c4"
+}

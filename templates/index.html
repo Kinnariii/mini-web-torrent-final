@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Torrent App</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f0f2f5; padding: 30px; }
+    h1 { text-align: center; color: #2c3e50; margin-bottom: 30px; }
+    .grid { display: flex; gap: 20px; max-width: 1100px; margin: auto; flex-wrap: wrap; }
+    .card {
+      background: white; border-radius: 10px; padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex: 1; min-width: 240px;
+    }
+    .card h2 { font-size: 16px; color: #555; margin-bottom: 15px;
+               border-bottom: 2px solid #4CAF50; padding-bottom: 6px; }
+    input[type="file"], input[type="text"] {
+      width: 100%; padding: 8px; margin-bottom: 10px;
+      border: 1px solid #ddd; border-radius: 5px; font-size: 14px;
+    }
+    button {
+      width: 100%; padding: 10px; background: #4CAF50;
+      color: white; border: none; border-radius: 5px;
+      cursor: pointer; font-size: 14px; margin-bottom: 6px;
+    }
+    button:hover { background: #45a049; }
+    button.danger { background: #e53935; }
+    button.danger:hover { background: #c62828; }
+    #upload-result { margin-top: 12px; font-size: 13px; color: #333; }
+    #download-result { margin-top: 12px; font-size: 13px; color: #333; }
+    .stat-row { display: flex; justify-content: space-between;
+                padding: 6px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+    .stat-row:last-child { border-bottom: none; }
+    .badge {
+      background: #e8f5e9; color: #2e7d32; font-size: 12px;
+      padding: 2px 8px; border-radius: 10px; font-weight: bold;
+    }
+    .badge.healthy { background: #e3f2fd; color: #1565c0; }
+    #peers-list { font-size: 13px; color: #444; }
+    .peer-item { padding: 5px 0; border-bottom: 1px solid #f5f5f5; }
+    .empty { color: #aaa; font-style: italic; font-size: 13px; }
+    #refresh-time { text-align: right; font-size: 11px; color: #aaa; margin-top: 8px; }
+
+    /* Summary stat boxes */
+    .summary-row { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+    .summary-box {
+      flex: 1; min-width: 70px; background: #f9f9f9; border-radius: 8px;
+      padding: 10px; text-align: center; border: 1px solid #e0e0e0;
+    }
+    .summary-box .val { font-size: 22px; font-weight: bold; color: #2c3e50; }
+    .summary-box .lbl { font-size: 11px; color: #888; margin-top: 2px; }
+
+    /* Progress bar */
+    .progress-wrap { margin-top: 10px; }
+    .progress-label { font-size: 12px; color: #555; margin-bottom: 4px; }
+    .progress-bar-bg { background: #e0e0e0; border-radius: 6px; height: 16px; overflow: hidden; }
+    .progress-bar-fill {
+      height: 100%; background: #4CAF50; border-radius: 6px;
+      transition: width 0.4s ease;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: white; font-weight: bold;
+    }
+    #delete-section { margin-top: 14px; }
+  </style>
+</head>
+<body>
+
+<h1>🧲 Mini Torrent Dashboard</h1>
+
+<div class="grid">
+
+  <!-- Upload Card -->
+  <div class="card">
+    <h2>📤 Share a File or Folder</h2>
+    <input type="file" id="file-input" multiple webkitdirectory>
+    <button onclick="uploadFile()">Upload & Generate Metainfo</button>
+    <div id="upload-result"></div>
+
+    <!-- Delete section shown after upload -->
+    <div id="delete-section" style="display:none;">
+      <hr style="margin:12px 0; border:none; border-top:1px solid #eee;">
+      <button class="danger" onclick="deleteTorrent()">🗑️ Delete This Torrent</button>
+      <div id="delete-result" style="font-size:13px; margin-top:6px;"></div>
+    </div>
+  </div>
+
+  <!-- Download Card -->
+  <div class="card">
+    <h2>📥 Download a File</h2>
+    <input type="text" id="metainfo-path" placeholder="e.g. uploads/file.pdf.json">
+    <input type="text" id="dl-port" placeholder="Port (e.g. 6882)" value="6882">
+    <button onclick="startDownload()">Start Download</button>
+    <div id="download-result"></div>
+    <div id="progress-section"></div>
+  </div>
+
+  <!-- Tracker Stats Card -->
+  <div class="card">
+    <h2>📡 DHT Network Stats</h2>
+    <div class="summary-row">
+      <div class="summary-box">
+        <div class="val" id="stat-active">—</div>
+        <div class="lbl">Active Peers</div>
+      </div>
+      <div class="summary-box">
+        <div class="val" id="stat-healthy">—</div>
+        <div class="lbl">Healthy Peers</div>
+      </div>
+      <div class="summary-box">
+        <div class="val" id="stat-torrents">—</div>
+        <div class="lbl">Torrents</div>
+      </div>
+    </div>
+    <div id="tracker-stats"><p class="empty">Loading...</p></div>
+    <div id="refresh-time"></div>
+  </div>
+
+  <!-- Active Peers Card -->
+  <div class="card">
+    <h2>🖥️ Active Peers</h2>
+    <div id="peers-list"><p class="empty">No peers yet</p></div>
+  </div>
+
+</div>
+
+<script>
+  let lastMetainfoPath = null;
+
+  // ── Upload ──
+  async function uploadFile() {
+    const fileInput = document.getElementById('file-input');
+    const resultDiv = document.getElementById('upload-result');
+    const deleteSection = document.getElementById('delete-section');
+
+    if (!fileInput.files[0]) {
+      resultDiv.innerHTML = '<span style="color:red">Please select a file first.</span>';
+      return;
+    }
+
+    resultDiv.innerHTML = 'Uploading...';
+    deleteSection.style.display = 'none';
+
+    const formData = new FormData();
+    for (let i = 0; i < fileInput.files.length; i++) {
+      const f = fileInput.files[i];
+      formData.append('file', f, f.webkitRelativePath || f.name);
+    }
+
+    try {
+      const resp = await fetch('/upload', { method: 'POST', body: formData });
+      const data = await resp.json();
+
+      if (data.error) {
+        resultDiv.innerHTML = `<span style="color:red">Error: ${data.error}</span>`;
+      } else {
+        lastMetainfoPath = data.metainfo_path;
+        document.getElementById('metainfo-path').value = data.metainfo_path;
+        resultDiv.innerHTML = `
+          <div style="color:green">✔ ${data.message}</div>
+          <div class="stat-row"><span>Target</span><span>${data.file_name}</span></div>
+          <div class="stat-row"><span>Size</span><span>${Math.round(data.size / 1024)} KB</span></div>
+          <div class="stat-row"><span>Pieces</span><span>${data.pieces}</span></div>
+          <div class="stat-row"><span>Metainfo</span><span>${data.metainfo_path}</span></div>
+        `;
+        deleteSection.style.display = 'block';
+      }
+    } catch (e) {
+      resultDiv.innerHTML = `<span style="color:red">Request failed: ${e}</span>`;
+    }
+  }
+
+  // ── Delete torrent ──
+  async function deleteTorrent() {
+    const resultDiv = document.getElementById('delete-result');
+    if (!lastMetainfoPath) {
+      resultDiv.innerHTML = '<span style="color:red">No torrent to delete.</span>';
+      return;
+    }
+    if (!confirm(`Delete torrent at ${lastMetainfoPath}? This removes the files from the server.`)) return;
+
+    resultDiv.innerHTML = 'Deleting...';
+    try {
+      const resp = await fetch('/delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ metainfo_path: lastMetainfoPath })
+      });
+      const data = await resp.json();
+
+      if (data.error) {
+        resultDiv.innerHTML = `<span style="color:red">Error: ${data.error}</span>`;
+      } else {
+        resultDiv.innerHTML = `<span style="color:green">✔ ${data.message}</span>`;
+        document.getElementById('upload-result').innerHTML = '';
+        document.getElementById('metainfo-path').value = '';
+        document.getElementById('delete-section').style.display = 'none';
+        lastMetainfoPath = null;
+      }
+    } catch (e) {
+      resultDiv.innerHTML = `<span style="color:red">Request failed: ${e}</span>`;
+    }
+  }
+
+  // ── Start Download ──
+  async function startDownload() {
+    const metainfoPath = document.getElementById('metainfo-path').value.trim();
+    const port = document.getElementById('dl-port').value.trim();
+    const resultDiv = document.getElementById('download-result');
+    const progressSection = document.getElementById('progress-section');
+
+    if (!metainfoPath || !port) {
+      resultDiv.innerHTML = '<span style="color:red">Please fill in both fields.</span>';
+      return;
+    }
+
+    resultDiv.innerHTML = 'Starting download...';
+    progressSection.innerHTML = '';
+
+    try {
+      const resp = await fetch('/download', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ metainfo_path: metainfoPath, port: parseInt(port) })
+      });
+      const data = await resp.json();
+
+      if (data.error) {
+        resultDiv.innerHTML = `<span style="color:red">Error: ${data.error}</span>`;
+      } else {
+        resultDiv.innerHTML = `<span style="color:green">✔ ${data.message}</span>`;
+        // FIX: data.num_pieces is now correctly returned by the backend
+        startProgressPolling(data.file_name, data.num_pieces);
+      }
+    } catch (e) {
+      resultDiv.innerHTML = `<span style="color:red">Request failed: ${e}</span>`;
+    }
+  }
+
+  // ── Progress polling ──
+  function startProgressPolling(fileName, numPieces) {
+    const section = document.getElementById('progress-section');
+    section.innerHTML = `
+      <div class="progress-wrap">
+        <div class="progress-label">📦 ${fileName} — <span id="prog-text">0 / ${numPieces || '?'} pieces</span></div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="prog-bar" style="width:0%">0%</div>
+        </div>
+      </div>`;
+
+    const interval = setInterval(async () => {
+      try {
+        const resp = await fetch('/progress');
+        const data = await resp.json();
+
+        const pct   = data[fileName]?.percent      ?? 0;
+        const done  = data[fileName]?.pieces_done  ?? 0;
+        const total = data[fileName]?.total_pieces ?? numPieces ?? 0;
+
+        document.getElementById('prog-bar').style.width = pct + '%';
+        document.getElementById('prog-bar').textContent = pct + '%';
+        document.getElementById('prog-text').textContent = `${done} / ${total} pieces`;
+
+        if (data[fileName]?.status === 'completed') {
+          clearInterval(interval);
+          document.getElementById('prog-bar').style.background = '#2e7d32';
+          document.getElementById('prog-text').textContent = '✔ Complete!';
+        }
+      } catch (e) { /* silently ignore polling errors */ }
+    }, 2000);
+  }
+
+  // ── Stats refresh ──
+  async function refreshStats() {
+    try {
+      const resp = await fetch('/stats');
+      const data = await resp.json();
+
+      const statsDiv    = document.getElementById('tracker-stats');
+      const peersDiv    = document.getElementById('peers-list');
+      const statActive  = document.getElementById('stat-active');
+      const statHealthy = document.getElementById('stat-healthy');
+      const statTorrents= document.getElementById('stat-torrents');
+
+      if (data.error) {
+        statsDiv.innerHTML  = `<p class="empty">⚠️ ${data.error}</p>`;
+        peersDiv.innerHTML  = `<p class="empty">Tracker offline</p>`;
+        statActive.textContent = statHealthy.textContent = statTorrents.textContent = '—';
+        return;
+      }
+
+      // FIX: use the new structured response { summary, torrents }
+      const summary  = data.summary  || {};
+      const torrents = data.torrents || {};
+
+      statActive.textContent   = summary.total_active_peers  ?? 0;
+      statHealthy.textContent  = summary.total_healthy_peers ?? 0;
+      statTorrents.textContent = summary.total_torrents      ?? 0;
+
+      const files = Object.keys(torrents);
+      if (files.length === 0) {
+        statsDiv.innerHTML = `<p class="empty">No active torrents</p>`;
+        peersDiv.innerHTML = `<p class="empty">No peers yet</p>`;
+        return;
+      }
+
+      let statsHTML = '';
+      files.forEach(fname => {
+        const count   = torrents[fname].active_peers;
+        const healthy = torrents[fname].healthy_peers;
+        const shortHash = fname.substring(0, 10) + '...';
+        statsHTML += `
+          <div class="stat-row">
+            <span title="${fname}">${shortHash}</span>
+            <span>
+              <span class="badge">${count} peer${count !== 1 ? 's' : ''}</span>
+              &nbsp;<span class="badge healthy">${healthy} healthy</span>
+            </span>
+          </div>`;
+      });
+      statsDiv.innerHTML = statsHTML;
+
+      let peersHTML = '';
+      files.forEach(fname => {
+        const shortHash = fname.substring(0, 10) + '...';
+        Object.entries(torrents[fname].peers).forEach(([addr, age]) => {
+          const isHealthy = age <= 30;
+          peersHTML += `
+            <div class="peer-item">
+              🖥️ <strong>${addr}</strong>
+              <span style="float:right;color:${isHealthy ? '#1565c0' : '#888'}">
+                ${age}s ago — ${shortHash}${isHealthy ? ' ✅' : ''}
+              </span>
+            </div>`;
+        });
+      });
+      peersDiv.innerHTML = peersHTML || `<p class="empty">No peers yet</p>`;
+
+      document.getElementById('refresh-time').textContent =
+        `Last updated: ${new Date().toLocaleTimeString()}`;
+
+    } catch (e) {
+      document.getElementById('tracker-stats').innerHTML =
+        `<p class="empty">Could not reach app server</p>`;
+    }
+  }
+
+  refreshStats();
+  setInterval(refreshStats, 5000);
+</script>
+
+</body>
+</html>

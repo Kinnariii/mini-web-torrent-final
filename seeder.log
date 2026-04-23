@@ -1,0 +1,56 @@
+┌───────────────────────────────────────────────┐
+│ mini-webtorrent  |  port 6607  |  mode SEEDER │
+└───────────────────────────────────────────────┘
+[23:23:49] [DHT] Node running on port 7607                          peer.py:212
+
+✔ All pieces downloaded! Now seeding.
+           [Uploader] Listening on port 6607 (TLS Enabled)          peer.py:145
+           [Uploader] Served piece 2 to 127.0.0.1                   peer.py:121
+[23:23:55] [Uploader] Served piece 0 to 127.0.0.1                   peer.py:121
+           [Uploader] Served piece 4 to 127.0.0.1                   peer.py:121
+           [Uploader] Served piece 1 to 127.0.0.1                   peer.py:121
+           [Uploader] Served piece 3 to 127.0.0.1                   peer.py:121
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+Downloading ---------------------------------------- 100.0% (5/5 pieces)
+Traceback (most recent call last):
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 334, in <module>
+    main()
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 331, in main
+    run_downloader(metainfo, args.port, args.seeder)
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 252, in run_downloader
+    time.sleep(30)
+KeyboardInterrupt
+--------------------------- 100.0% (5/5 pieces)
+Traceback (most recent call last):
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 334, in <module>
+    main()
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 331, in main
+    run_downloader(metainfo, args.port, args.seeder)
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 252, in run_downloader
+    time.sleep(30)
+KeyboardInterrupt
