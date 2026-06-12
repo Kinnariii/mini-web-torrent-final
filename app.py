@@ -64,8 +64,13 @@ def run_leecher(metainfo_path, port):
                 "total_pieces": total_pieces, "status": "downloading"
             }
 
-    download_progress[file_name]["status"] = "completed"
-    download_progress[file_name]["percent"] = 100
+    exit_code = process.wait()
+    if exit_code == 0 and pieces_done >= total_pieces:
+        download_progress[file_name]["status"] = "completed"
+        download_progress[file_name]["percent"] = 100
+    else:
+        download_progress[file_name]["status"] = "failed"
+        download_progress[file_name]["percent"] = round((pieces_done / total_pieces) * 100, 1) if total_pieces > 0 else 0
 
 @app.route('/')
 def index():

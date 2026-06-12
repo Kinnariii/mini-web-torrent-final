@@ -54,3 +54,634 @@ Traceback (most recent call last):
   File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 252, in run_downloader
     time.sleep(30)
 KeyboardInterrupt
+┌───────────────────────────────────────────────┐
+│ mini-webtorrent  |  port 6808  |  mode SEEDER │
+└───────────────────────────────────────────────┘
+[00:54:57] [DHT] Node running on port 7808                          peer.py:212
+
+✔ All pieces downloaded! Now seeding.
+           [Uploader] Listening on port 6808 (TLS Enabled)          peer.py:145
+
+✔ All pieces downloaded! Now seeding.
+[00:55:31] [Uploader] Served piece 0 to 127.0.0.1                   peer.py:121
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+┌───────────────────────────────────────────────┐
+│ mini-webtorrent  |  port 6898  |  mode SEEDER │
+└───────────────────────────────────────────────┘
+[22:51:46] [DHT] Node running on port 7898                          peer.py:224
+
+✔ All pieces downloaded! Now seeding.
+           [Uploader] Listening on port 6898 (TLS Enabled)          peer.py:154
+[22:52:07] [Uploader] Served piece 0 to 127.0.0.1                   peer.py:130
+
+✔ All pieces downloaded! Now seeding.
+Downloading ---------------------------------------- 100.0% (1/1 pieces)
+Traceback (most recent call last):
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 346, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 343, in main
+    run_downloader(metainfo, args.port, args.seeder)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 264, in run_downloader
+    time.sleep(30)
+    ~~~~~~~~~~^^^^
+KeyboardInterrupt
+┌───────────────────────────────────────────────┐
+│ mini-webtorrent  |  port 6971  |  mode SEEDER │
+└───────────────────────────────────────────────┘
+[22:56:10] [DHT] Node running on port 7971                          peer.py:224
+
+✔ All pieces downloaded! Now seeding.
+           [Uploader] Listening on port 6971 (TLS Enabled)          peer.py:154
+
+✔ All pieces downloaded! Now seeding.
+Downloading ---------------------------------------- 100.0% (2/2 pieces)
+Traceback (most recent call last):
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 346, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 343, in main
+    run_downloader(metainfo, args.port, args.seeder)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 264, in run_downloader
+    time.sleep(30)
+    ~~~~~~~~~~^^^^
+KeyboardInterrupt
+┌───────────────────────────────────────────────┐
+│ mini-webtorrent  |  port 6815  |  mode SEEDER │
+└───────────────────────────────────────────────┘
+[22:57:27] [DHT] Node running on port 7815                          peer.py:224
+
+✔ All pieces downloaded! Now seeding.
+           [Uploader] Listening on port 6815 (TLS Enabled)          peer.py:154
+[22:57:42] [Uploader] Served piece 1 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 2 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 3 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 0 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 5 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 4 to 127.0.0.1                   peer.py:130
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+Downloading ---------------------------------------- 100.0% (6/6 pieces)
+Traceback (most recent call last):
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 346, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 343, in main
+    run_downloader(metainfo, args.port, args.seeder)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 264, in run_downloader
+    time.sleep(30)
+    ~~~~~~~~~~^^^^
+KeyboardInterrupt
+┌───────────────────────────────────────────────┐
+│ mini-webtorrent  |  port 6883  |  mode SEEDER │
+└───────────────────────────────────────────────┘
+[23:05:17] [DHT] Node running on port 7883                          peer.py:224
+
+✔ All pieces downloaded! Now seeding.
+           [Uploader] Listening on port 6883 (TLS Enabled)          peer.py:154
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+Downloading ---------------------------------------- 100.0% (239/239 pieces)
+Traceback (most recent call last):
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 346, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 343, in main
+    run_downloader(metainfo, args.port, args.seeder)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 264, in run_downloader
+    time.sleep(30)
+    ~~~~~~~~~~^^^^
+KeyboardInterrupt
+┌───────────────────────────────────────────────┐
+│ mini-webtorrent  |  port 6017  |  mode SEEDER │
+└───────────────────────────────────────────────┘
+[23:18:11] [DHT] Node running on port 7017                          peer.py:224
+
+✔ All pieces downloaded! Now seeding.
+           [Uploader] Listening on port 6017 (TLS Enabled)          peer.py:154
+[23:18:31] [Uploader] Served piece 0 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 5 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 2 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 1 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 4 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 6 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 3 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 7 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 8 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 11 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 12 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 10 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 9 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 13 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 14 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 15 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 16 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 17 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 18 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 20 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 21 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 19 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 23 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 22 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 24 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 25 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 26 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 27 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 29 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 30 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 28 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 31 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 32 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 34 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 33 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 36 to 127.0.0.1                  peer.py:130
+[23:18:32] [Uploader] Served piece 35 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 37 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 38 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 40 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 39 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 41 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 42 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 43 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 44 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 46 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 45 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 47 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 48 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 51 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 50 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 52 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 49 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 56 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 53 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 55 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 54 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 58 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 57 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 60 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 61 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 59 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 63 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 62 to 127.0.0.1                  peer.py:130
+[23:18:33] [Uploader] Served piece 66 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 68 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 67 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 64 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 69 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 65 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 71 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 73 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 74 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 72 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 76 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 75 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 77 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 70 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 78 to 127.0.0.1                  peer.py:130
+[23:18:34] [Uploader] Served piece 79 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 80 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 81 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 83 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 82 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 85 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 84 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 89 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 88 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 86 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 87 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 90 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 91 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 92 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 93 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 95 to 127.0.0.1                  peer.py:130
+[23:18:35] [Uploader] Served piece 94 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 96 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 99 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 98 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 100 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 101 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 97 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 102 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 103 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 104 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 106 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 107 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 105 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 109 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 110 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 108 to 127.0.0.1                 peer.py:130
+[23:18:36] [Uploader] Served piece 113 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 112 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 111 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 114 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 117 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 118 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 116 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 119 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 115 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 121 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 120 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 122 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 124 to 127.0.0.1                 peer.py:130
+[23:18:37] [Uploader] Served piece 127 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 125 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 123 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 126 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 128 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 130 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 129 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 132 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 131 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 135 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 134 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 136 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 133 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 137 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 138 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 139 to 127.0.0.1                 peer.py:130
+[23:18:38] [Uploader] Served piece 140 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 142 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 143 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 141 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 145 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 146 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 144 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 150 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 148 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 147 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 149 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 151 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 152 to 127.0.0.1                 peer.py:130
+[23:18:39] [Uploader] Served piece 154 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 153 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 155 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 158 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 156 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 157 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 161 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 159 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 162 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 163 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 160 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 165 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 164 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 166 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 168 to 127.0.0.1                 peer.py:130
+[23:18:40] [Uploader] Served piece 167 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 171 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 170 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 172 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 169 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 175 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 176 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 173 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 174 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 177 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 178 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 180 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 179 to 127.0.0.1                 peer.py:130
+[23:18:41] [Uploader] Served piece 181 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 183 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 184 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 186 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 182 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 187 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 185 to 127.0.0.1                 peer.py:130
+
+✔ All pieces downloaded! Now seeding.
+           [Uploader] Served piece 189 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 190 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 188 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 191 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 192 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 194 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 193 to 127.0.0.1                 peer.py:130
+[23:18:42] [Uploader] Served piece 199 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 196 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 197 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 200 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 198 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 195 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 201 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 202 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 205 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 203 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 206 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 204 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 208 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 209 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 207 to 127.0.0.1                 peer.py:130
+[23:18:43] [Uploader] Served piece 210 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 211 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 213 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 215 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 216 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 212 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 214 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 217 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 219 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 218 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 221 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 220 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 222 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 223 to 127.0.0.1                 peer.py:130
+[23:18:44] [Uploader] Served piece 227 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 225 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 224 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 228 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 226 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 230 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 229 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 231 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 234 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 237 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 235 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 238 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 233 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 236 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 232 to 127.0.0.1                 peer.py:130
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+[23:22:02] [Uploader] Served piece 3 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 9 to 127.0.0.1                   peer.py:130
+           [Uploader] Served piece 11 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 10 to 127.0.0.1                  peer.py:130
+[23:22:03] [Uploader] Served piece 22 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 24 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 28 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 30 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 29 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 33 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 38 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 39 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 40 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 41 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 43 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 48 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 50 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 51 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 54 to 127.0.0.1                  peer.py:130
+[23:22:04] [Uploader] Served piece 58 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 64 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 69 to 127.0.0.1                  peer.py:130
+[23:22:05] [Uploader] Served piece 72 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 73 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 75 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 78 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 82 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 88 to 127.0.0.1                  peer.py:130
+[23:22:06] [Uploader] Served piece 89 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 86 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 91 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 90 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 95 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 94 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 96 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 97 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 99 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 98 to 127.0.0.1                  peer.py:130
+           [Uploader] Served piece 100 to 127.0.0.1                 peer.py:130
+[23:22:07] [Uploader] Served piece 102 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 103 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 108 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 109 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 110 to 127.0.0.1                 peer.py:130
+[23:22:08] [Uploader] Served piece 114 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 121 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 119 to 127.0.0.1                 peer.py:130
+[23:22:09] [Uploader] Served piece 132 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 131 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 133 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 134 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 137 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 138 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 140 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 142 to 127.0.0.1                 peer[23:22:10] [Uploader] Served piece 147 to 127.0.0.1                 peer.py:130
+[23:22:11] [Uploader] Served piece 156 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 157 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 165 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 164 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 168 to 127.0.0.1                 peer.py:130
+[23:22:12] [Uploader] Served piece 169 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 173 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 176 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 179 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 178 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 180 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 182 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 183 to 127.0.0.1 [23:22:13] [Uploader] Served piece 186 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 190 to 127.0.0.1                 peer.py:130
+           [Uploader] Served            [Uploader] Served piece 192 to 127.0.0.1                 peer.py:130
+[23:22:14] [Uploader] Served piece 197 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 198 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 200 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 201 to 127.0.0.1            [Uploader] Served piece 203 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 204 to 127.0.0.1                 peer.py:130
+           [Uploader] Served [23:22:15] [Uploader] Served piece 211 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 218 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 217 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 220 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 219 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 224 to 127.0.0.1                 peer.py:130
+[23:22:16] [Uploader] Served piece 221 to 127.0.0.1 [23:22:16] [Uploader] Served piece 231 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 233 to 127.0.0.1                 peer.py:130
+           [Uploader] Served piece 235 to 127.0.0.1                 peer.py:130
+
+✔ All pieces downloaded! Now seeding.
+
+✔ All pieces downloaded! Now seeding.
+Downloading ---------------------------------------- 100.0% (239/239 pieces)
+Traceback (most recent call last):
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 346, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 343, in main
+    run_downloader(metainfo, args.port, args.seeder)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aditi J  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 346, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 343, in main
+    run_downloader(metainfo, args.port, args.seeder)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Aditi Jain\OneDrive\Desktop\mini-webtorrent-fixed\mini-webtorrent-fixed\peer.py", line 264, in run_downloader
+    time.sleep(30)
+    ~~~~~~~~~~^^^^
+KeyboardInterrupt

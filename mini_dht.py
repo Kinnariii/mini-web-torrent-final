@@ -16,6 +16,7 @@ class MiniDHTNode:
         
         # store[info_hash][peer_addr] = {"ts": timestamp, "pieces": [...]}
         self.store = {}
+        self.store_lock = threading.Lock()
         
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sock.bind((self.host, self.port))
@@ -64,33 +65,35 @@ class MiniDHTNode:
                     peer_addr = msg.get("peer_addr")
                     pieces = msg.get("pieces", [])
                     
-                    if info_hash not in self.store:
-                        self.store[info_hash] = {}
-                        
-                    self.store[info_hash][peer_addr] = {"ts": time.time(), "pieces": pieces}
+                    with self.store_lock:
+                        if info_hash not in self.store:
+                            self.store[info_hash] = {}
+                        self.store[info_hash][peer_addr] = {"ts": time.time(), "pieces": pieces}
                     
                 elif msg_type == "FIND_VALUE":
                     info_hash = msg.get("info_hash")
-                    if info_hash in self.store:
-                        now = time.time()
-                        peers = [
-                            {"addr": p, "pieces": data["pieces"]}
-                            for p, data in self.store[info_hash].items()
-                            if now - data["ts"] <= 90
-                        ]
-                        self._send({"type": "FIND_VALUE_RESPONSE", "info_hash": info_hash, "peers": peers}, addr)
-                    else:
-                        # Return known nodes so the requester can ask them
-                        nodes_list = [f"{ip}:{port}" for ip, port in self.known_nodes][:10]
-                        self._send({"type": "FIND_VALUE_RESPONSE", "info_hash": info_hash, "nodes": nodes_list}, addr)
+                    with self.store_lock:
+                        if info_hash in self.store:
+                            now = time.time()
+                            peers = [
+                                {"addr": p, "pieces": data["pieces"]}
+                                for p, data in self.store[info_hash].items()
+                                if now - data["ts"] <= 90
+                            ]
+                            self._send({"type": "FIND_VALUE_RESPONSE", "info_hash": info_hash, "peers": peers}, addr)
+                        else:
+                            # Return known nodes so the requester can ask them
+                            nodes_list = [f"{ip}:{port}" for ip, port in self.known_nodes][:10]
+                            self._send({"type": "FIND_VALUE_RESPONSE", "info_hash": info_hash, "nodes": nodes_list}, addr)
                         
                 elif msg_type == "FIND_VALUE_RESPONSE":
                     info_hash = msg.get("info_hash")
                     if info_hash and "peers" in msg:
-                        if info_hash not in self.store:
-                            self.store[info_hash] = {}
-                        for p in msg["peers"]:
-                            self.store[info_hash][p["addr"]] = {"ts": time.time(), "pieces": p["pieces"]}
+                        with self.store_lock:
+                            if info_hash not in self.store:
+                                self.store[info_hash] = {}
+                            for p in msg["peers"]:
+                                self.store[info_hash][p["addr"]] = {"ts": time.time(), "pieces": p["pieces"]}
                     if "nodes" in msg:
                         for n in msg["nodes"]:
                             try:
@@ -105,12 +108,13 @@ class MiniDHTNode:
         while self.running:
             time.sleep(30)
             now = time.time()
-            for info_hash in list(self.store.keys()):
-                stale = [p for p, data in self.store[info_hash].items() if now - data["ts"] > 90]
-                for p in stale:
-                    del self.store[info_hash][p]
-                if not self.store[info_hash]:
-                    del self.store[info_hash]
+            with self.store_lock:
+                for info_hash in list(self.store.keys()):
+                    stale = [p for p, data in self.store[info_hash].items() if now - data["ts"] > 90]
+                    for p in stale:
+                        del self.store[info_hash][p]
+                    if not self.store[info_hash]:
+                        del self.store[info_hash]
 
     def ping(self, addr):
         self._send({"type": "PING", "node_id": self.node_id}, addr)
@@ -127,9 +131,10 @@ class MiniDHTNode:
         }
         
         # Store locally too
-        if info_hash not in self.store:
-            self.store[info_hash] = {}
-        self.store[info_hash][peer_addr] = {"ts": time.time(), "pieces": pieces}
+        with self.store_lock:
+            if info_hash not in self.store:
+                self.store[info_hash] = {}
+            self.store[info_hash][peer_addr] = {"ts": time.time(), "pieces": pieces}
 
         for node in list(self.known_nodes):
             self._send(msg, node)
@@ -145,12 +150,13 @@ class MiniDHTNode:
         
         now = time.time()
         peers = []
-        if info_hash in self.store:
-            peers = [
-                {"addr": p, "pieces": data["pieces"]}
-                for p, data in self.store[info_hash].items()
-                if now - data["ts"] <= 90
-            ]
+        with self.store_lock:
+            if info_hash in self.store:
+                peers = [
+                    {"addr": p, "pieces": data["pieces"]}
+                    for p, data in self.store[info_hash].items()
+                    if now - data["ts"] <= 90
+                ]
         return peers
 
     def stop(self):

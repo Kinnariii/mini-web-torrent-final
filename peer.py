@@ -79,9 +79,13 @@ class LogicalFileStream:
                 read_size = min(bytes_left, f["end"] - curr_offset)
                 with open(f["long_path"], "rb") as fd:
                     fd.seek(file_offset)
-                    data += fd.read(read_size)
-                bytes_left -= read_size
-                curr_offset += read_size
+                    chunk = fd.read(read_size)
+                actual_read = len(chunk)
+                data += chunk
+                bytes_left -= actual_read
+                curr_offset += actual_read
+                if actual_read < read_size:
+                    break  # File shorter than expected
         return data
 
     def write_piece(self, offset, data):
@@ -105,9 +109,14 @@ class LogicalFileStream:
 # ─────────────────────────────────────────────
 def handle_peer_request(client_socket, addr, lfs, piece_size, total_size):
     try:
+        client_socket.settimeout(30)
         message = client_socket.recv(1024).decode().strip()
         if message.startswith("GET_PIECE:"):
             piece_index = int(message.split(":")[1])
+            num_pieces = (total_size + piece_size - 1) // piece_size
+            if not (0 <= piece_index < num_pieces):
+                console.log(f"[red][Uploader] Invalid piece index {piece_index} from {addr}[/red]")
+                return
             offset = piece_index * piece_size
             actual_piece_size = min(piece_size, total_size - offset)
             
@@ -178,6 +187,9 @@ def download_piece(peer_addr, piece_index, piece_size, total_size, expected_hash
             piece_data += chunk
     finally:
         secure_s.close()
+
+    if len(piece_data) < actual_piece_size:
+        raise IOError(f"Partial read for piece {piece_index}: got {len(piece_data)}, expected {actual_piece_size}")
 
     if hashlib.sha1(piece_data).hexdigest() != expected_hash:
         raise ValueError(f"Hash mismatch for piece {piece_index} from {peer_addr}")
